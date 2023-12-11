@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         let VC = MessageListViewController()
+//        VC.viewModel = Injection.init().provideHomePresenter()
         window?.rootViewController = UINavigationController(rootViewController: VC)
         window?.makeKeyAndVisible()
     }

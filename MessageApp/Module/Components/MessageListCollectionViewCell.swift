@@ -10,7 +10,7 @@ import UIKit
 class MessageListCollectionViewCell: UICollectionViewCell {
     
     
-    var data: MessageListModel? {
+    var data: MovieModel? {
         didSet {
             managedData()
         }
@@ -96,15 +96,15 @@ class MessageListCollectionViewCell: UICollectionViewCell {
     
     func managedData() {
         guard let data = data else { return }
-        customImageView.imageView.image = UIImage(named: data.userImage)
+//        customImageView.imageView.image = UIImage(named: data.userImage)
         setUserNameAttributedText()
-        dateaLabel.text = data.date
-        if data.pending {
-            pendingMessageView.isHidden = false
-            pendingLabel.text = data.pendingCount
-        } else {
-            pendingMessageView.isHidden = true
-        }
+        dateaLabel.text = data.release_date
+//        if data.pending {
+//            pendingMessageView.isHidden = false
+//            pendingLabel.text = data.release_date
+//        } else {
+//            pendingMessageView.isHidden = true
+//        }
         
     }
     
@@ -114,9 +114,9 @@ class MessageListCollectionViewCell: UICollectionViewCell {
     
     func setUserNameAttributedText() {
         guard let data = data else { return }
-        let attributedText = NSMutableAttributedString(string: "\(data.userName ?? "")", attributes: [NSAttributedString.Key.font: UIFont(name: CustomFont.poppinsMedium, size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        let attributedText = NSMutableAttributedString(string: "\(data.title ?? "")", attributes: [NSAttributedString.Key.font: UIFont(name: CustomFont.poppinsMedium, size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
-        attributedText.append(NSAttributedString(string: "\n\(data.lastMessage ?? "")", attributes: [NSAttributedString.Key.font: UIFont(name: CustomFont.poppinsMedium, size: 14)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        attributedText.append(NSAttributedString(string: "\n\(data.overview ?? "")", attributes: [NSAttributedString.Key.font: UIFont(name: CustomFont.poppinsMedium, size: 14)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
         
         userName.attributedText = attributedText
     }

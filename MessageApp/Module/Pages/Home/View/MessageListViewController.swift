@@ -7,9 +7,12 @@
 
 import UIKit
 
+protocol MovieListDisplayLogic {
+    func displayMovies()
+}
 
-
-class MessageListViewController: UIViewController {
+class MessageListViewController: UIViewController, MovieListDisplayLogic {
+    
     
     let messageData: [MessageListModel] = [
         MessageListModel(userName: "Grant Ward", lastMessage: "Hi how are you! I've tried to call you but you haven't respond", userImage: "prof-img1", date: "10/08/2020", pending: true, pendingCount: "4"),
@@ -20,6 +23,8 @@ class MessageListViewController: UIViewController {
         MessageListModel(userName: "John Garrett", lastMessage: "Good luck son.", userImage: "prof-img6", date: "19/08/2020", pending: false, pendingCount: "0"),
         MessageListModel(userName: "Dheeraj Kumar Sharma", lastMessage: "This is test!", userImage: "prof-img7", date: "20/08/2020", pending: false, pendingCount: "0"),
     ]
+    
+    var viewModel: HomePresenterProtocol = HomePresenter(homeUseCase: Injection.init().provideHome())
     
     let navView: MessageListNavigationView = {
         let v = MessageListNavigationView()
@@ -43,15 +48,32 @@ class MessageListViewController: UIViewController {
     }()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = CustomColor.appLight
         view.addSubview(navView)
         view.addSubview(collectionView)
         setUpConstraints()
+        viewModel.fetchNowPlayingMovies()
+        observeEvent()
+        
+//        
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { // Change `2.0` to the desired number of seconds.
+//                    self.collectionView.reloadData()
+//                }
+
+        
         // Do any additional setup after loading the view.
+    }
+    
+//    func loadList(notification: NSNotification){
+//        self.collectionView.reloadData()
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchNowPlayingMovies()
     }
     
     func setUpConstraints(){
@@ -67,16 +89,49 @@ class MessageListViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+    func displayMovies() {
+  
+    }
+}
+
+extension MessageListViewController {
+    func observeEvent(){
+        viewModel.eventHandler = { [weak self] event in
+            guard let self else { return }
+            switch event {
+            
+            case .loading:
+                print("Loading...")
+            case .stopLoading:
+                print("Stop loading...")
+            case .dataLoaded:
+                print("data loaded")
+                DispatchQueue.main.async {
+                                   // UI Main works well
+                    self.collectionView.reloadData()
+                               }
+            case .error(_):
+                print("data error")
+            }
+            
+        }
+    }
 }
 
 extension MessageListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messageData.count
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { // Change `2.0` to the desired number of seconds.
+//            print(self.viewModel.movies.count)
+//        }
+        return viewModel.numRow
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MessageListCollectionViewCell", for: indexPath) as! MessageListCollectionViewCell
-        cell.data = messageData[indexPath.row]
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MessageListCollectionViewCell", for: indexPath) as? MessageListCollectionViewCell else  { return UICollectionViewCell() }
+
+//        print(viewModel!.movies)
+        cell.data = self.viewModel.movies[indexPath.row]
         return cell
     }
     

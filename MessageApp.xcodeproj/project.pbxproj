@@ -34,7 +34,23 @@
 		6EC527982B24CA59007CC056 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC527972B24CA59007CC056 /* Injection.swift */; };
 		6EC9208D2B25BC3E00A7E2C7 /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9208C2B25BC3E00A7E2C7 /* HomePresenterProtocol.swift */; };
 		6EC9208F2B25BD5100A7E2C7 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9208E2B25BD5100A7E2C7 /* HomePresenter.swift */; };
+		6EC920AF2B2D7B9300A7E2C7 /* MessageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC920AE2B2D7B9300A7E2C7 /* MessageAppTests.swift */; };
+		6EC920B82B2D7BCB00A7E2C7 /* MovieRemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC920B72B2D7BCB00A7E2C7 /* MovieRemoteDataSourceTest.swift */; };
+		6EC920BD2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EC920BB2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodeld */; };
+		6EC920C02B2DACC900A7E2C7 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC920BF2B2DACC900A7E2C7 /* MovieEntity.swift */; };
+		6EC920C22B2DAD6E00A7E2C7 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC920C12B2DAD6E00A7E2C7 /* DatabaseHelper.swift */; };
+		6EC920C52B2E043F00A7E2C7 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC920C42B2E043F00A7E2C7 /* MockURLSessionProtocol.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EC920B02B2D7B9300A7E2C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EB0B7CD2B22118C00B598A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EB0B7D42B22118C00B598A7;
+			remoteInfo = MessageApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6EB0B7D52B22118C00B598A7 /* MessageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,10 +82,24 @@
 		6EC527972B24CA59007CC056 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		6EC9208C2B25BC3E00A7E2C7 /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
 		6EC9208E2B25BD5100A7E2C7 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		6EC920AC2B2D7B9300A7E2C7 /* MessageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EC920AE2B2D7B9300A7E2C7 /* MessageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAppTests.swift; sourceTree = "<group>"; };
+		6EC920B72B2D7BCB00A7E2C7 /* MovieRemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRemoteDataSourceTest.swift; sourceTree = "<group>"; };
+		6EC920BC2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieContainer.xcdatamodel; sourceTree = "<group>"; };
+		6EC920BF2B2DACC900A7E2C7 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		6EC920C12B2DAD6E00A7E2C7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		6EC920C42B2E043F00A7E2C7 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6EB0B7D22B22118C00B598A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EC920A92B2D7B9300A7E2C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB0B7D72B22118C00B598A7 /* MessageApp */,
+				6EC920AD2B2D7B9300A7E2C7 /* MessageAppTests */,
 				6EB0B7D62B22118C00B598A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB0B7D52B22118C00B598A7 /* MessageApp.app */,
+				6EC920AC2B2D7B9300A7E2C7 /* MessageAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +138,7 @@
 				6EB0B7E12B22118E00B598A7 /* Assets.xcassets */,
 				6EB0B7E32B22118E00B598A7 /* LaunchScreen.storyboard */,
 				6EB0B7E62B22118E00B598A7 /* Info.plist */,
+				6EC920BB2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodeld */,
 			);
 			path = MessageApp;
 			sourceTree = "<group>";
@@ -206,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				6EC527882B24C43A007CC056 /* MovieRepository.swift */,
+				6EC920B92B2DA7ED00A7E2C7 /* Locale */,
 				6EC5277D2B24BD2B007CC056 /* Remote */,
 			);
 			path = Data;
@@ -306,6 +340,65 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6EC920AD2B2D7B9300A7E2C7 /* MessageAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920C32B2E03E700A7E2C7 /* Mocks */,
+				6EC920B52B2D7B9B00A7E2C7 /* Data */,
+				6EC920AE2B2D7B9300A7E2C7 /* MessageAppTests.swift */,
+			);
+			path = MessageAppTests;
+			sourceTree = "<group>";
+		};
+		6EC920B52B2D7B9B00A7E2C7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920B62B2D7BAF00A7E2C7 /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6EC920B62B2D7BAF00A7E2C7 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920B72B2D7BCB00A7E2C7 /* MovieRemoteDataSourceTest.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		6EC920B92B2DA7ED00A7E2C7 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920BE2B2DAC9B00A7E2C7 /* Entities */,
+				6EC920BA2B2DA82300A7E2C7 /* db */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		6EC920BA2B2DA82300A7E2C7 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920C12B2DAD6E00A7E2C7 /* DatabaseHelper.swift */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		6EC920BE2B2DAC9B00A7E2C7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920BF2B2DACC900A7E2C7 /* MovieEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		6EC920C32B2E03E700A7E2C7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920C42B2E043F00A7E2C7 /* MockURLSessionProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,6 +419,24 @@
 			productReference = 6EB0B7D52B22118C00B598A7 /* MessageApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6EC920AB2B2D7B9300A7E2C7 /* MessageAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EC920B22B2D7B9300A7E2C7 /* Build configuration list for PBXNativeTarget "MessageAppTests" */;
+			buildPhases = (
+				6EC920A82B2D7B9300A7E2C7 /* Sources */,
+				6EC920A92B2D7B9300A7E2C7 /* Frameworks */,
+				6EC920AA2B2D7B9300A7E2C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EC920B12B2D7B9300A7E2C7 /* PBXTargetDependency */,
+			);
+			name = MessageAppTests;
+			productName = MessageAppTests;
+			productReference = 6EC920AC2B2D7B9300A7E2C7 /* MessageAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -338,6 +449,10 @@
 				TargetAttributes = {
 					6EB0B7D42B22118C00B598A7 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					6EC920AB2B2D7B9300A7E2C7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 6EB0B7D42B22118C00B598A7;
 					};
 				};
 			};
@@ -355,6 +470,7 @@
 			projectRoot = "";
 			targets = (
 				6EB0B7D42B22118C00B598A7 /* MessageApp */,
+				6EC920AB2B2D7B9300A7E2C7 /* MessageAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -373,6 +489,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EC920AA2B2D7B9300A7E2C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,6 +507,7 @@
 				6EB0B7DD2B22118C00B598A7 /* MessageListViewController.swift in Sources */,
 				6EC527842B24BD2B007CC056 /* CustomError+Ext.swift in Sources */,
 				6EB0B7D92B22118C00B598A7 /* AppDelegate.swift in Sources */,
+				6EC920C22B2DAD6E00A7E2C7 /* DatabaseHelper.swift in Sources */,
 				6EB0B7F82B22BA0A00B598A7 /* Custom.swift in Sources */,
 				6EC527932B24C759007CC056 /* MovieMapper.swift in Sources */,
 				6EC527892B24C43A007CC056 /* MovieRepository.swift in Sources */,
@@ -391,6 +515,7 @@
 				6EB0B8212B23209700B598A7 /* MessageListCollectionViewCell.swift in Sources */,
 				6EB0B81F2B231D6200B598A7 /* Model.swift in Sources */,
 				6EC9208D2B25BC3E00A7E2C7 /* HomePresenterProtocol.swift in Sources */,
+				6EC920C02B2DACC900A7E2C7 /* MovieEntity.swift in Sources */,
 				6EB0B8232B23211400B598A7 /* CustomMessageView.swift in Sources */,
 				6EC527872B24BD2B007CC056 /* MovieRemoteDataSource.swift in Sources */,
 				6EB0B7FC2B22BE0600B598A7 /* MessageListNavigationView.swift in Sources */,
@@ -398,13 +523,32 @@
 				6EC527902B24C4CF007CC056 /* MovieModel.swift in Sources */,
 				6EC527862B24BD2B007CC056 /* MovieResponse.swift in Sources */,
 				6EC527962B24C997007CC056 /* HomeInteractor.swift in Sources */,
+				6EC920BD2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodeld in Sources */,
 				6EC527852B24BD2B007CC056 /* BaseResponse.swift in Sources */,
 				6EC527832B24BD2B007CC056 /* APICall.swift in Sources */,
 				6EC527982B24CA59007CC056 /* Injection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EC920A82B2D7B9300A7E2C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EC920AF2B2D7B9300A7E2C7 /* MessageAppTests.swift in Sources */,
+				6EC920B82B2D7BCB00A7E2C7 /* MovieRemoteDataSourceTest.swift in Sources */,
+				6EC920C52B2E043F00A7E2C7 /* MockURLSessionProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6EC920B12B2D7B9300A7E2C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EB0B7D42B22118C00B598A7 /* MessageApp */;
+			targetProxy = 6EC920B02B2D7B9300A7E2C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6EB0B7E32B22118E00B598A7 /* LaunchScreen.storyboard */ = {
@@ -586,6 +730,40 @@
 			};
 			name = Release;
 		};
+		6EC920B32B2D7B9300A7E2C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqbal.app.MessageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MessageApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MessageApp";
+			};
+			name = Debug;
+		};
+		6EC920B42B2D7B9300A7E2C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqbal.app.MessageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MessageApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MessageApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -607,7 +785,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6EC920B22B2D7B9300A7E2C7 /* Build configuration list for PBXNativeTarget "MessageAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EC920B32B2D7B9300A7E2C7 /* Debug */,
+				6EC920B42B2D7B9300A7E2C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6EC920BB2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6EC920BC2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodel */,
+			);
+			currentVersion = 6EC920BC2B2DABBA00A7E2C7 /* MovieContainer.xcdatamodel */;
+			path = MovieContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6EB0B7CD2B22118C00B598A7 /* Project object */;
 }

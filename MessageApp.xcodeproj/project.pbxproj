@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3901D42B30941600BE6042 /* NowPlayingMoviesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EC920C82B2E078200A7E2C7 /* NowPlayingMoviesData.json */; };
+		6E3901D62B312FB800BE6042 /* StaticJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3901D52B312FB800BE6042 /* StaticJSONMapper.swift */; };
 		6EB0B7D92B22118C00B598A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0B7D82B22118C00B598A7 /* AppDelegate.swift */; };
 		6EB0B7DB2B22118C00B598A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0B7DA2B22118C00B598A7 /* SceneDelegate.swift */; };
 		6EB0B7DD2B22118C00B598A7 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0B7DC2B22118C00B598A7 /* MessageListViewController.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E3901D52B312FB800BE6042 /* StaticJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONMapper.swift; sourceTree = "<group>"; };
 		6EB0B7D52B22118C00B598A7 /* MessageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB0B7D82B22118C00B598A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EB0B7DA2B22118C00B598A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		6EC920BF2B2DACC900A7E2C7 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		6EC920C12B2DAD6E00A7E2C7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		6EC920C42B2E043F00A7E2C7 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
+		6EC920C82B2E078200A7E2C7 /* NowPlayingMoviesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NowPlayingMoviesData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				6EC527922B24C759007CC056 /* MovieMapper.swift */,
+				6E3901D52B312FB800BE6042 /* StaticJSONMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 		6EC920AD2B2D7B9300A7E2C7 /* MessageAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				6EC920C62B2E075000A7E2C7 /* Resources */,
 				6EC920C32B2E03E700A7E2C7 /* Mocks */,
 				6EC920B52B2D7B9B00A7E2C7 /* Data */,
 				6EC920AE2B2D7B9300A7E2C7 /* MessageAppTests.swift */,
@@ -397,6 +403,22 @@
 				6EC920C42B2E043F00A7E2C7 /* MockURLSessionProtocol.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		6EC920C62B2E075000A7E2C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920C72B2E075C00A7E2C7 /* JSON */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EC920C72B2E075C00A7E2C7 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				6EC920C82B2E078200A7E2C7 /* NowPlayingMoviesData.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3901D42B30941600BE6042 /* NowPlayingMoviesData.json in Resources */,
 				6EB0B7E52B22118E00B598A7 /* LaunchScreen.storyboard in Resources */,
 				6EB0B7F32B22122D00B598A7 /* Poppins-Medium.ttf in Resources */,
 				6EB0B7F42B22122D00B598A7 /* Poppins-Bold.ttf in Resources */,
@@ -527,6 +550,7 @@
 				6EC527852B24BD2B007CC056 /* BaseResponse.swift in Sources */,
 				6EC527832B24BD2B007CC056 /* APICall.swift in Sources */,
 				6EC527982B24CA59007CC056 /* Injection.swift in Sources */,
+				6E3901D62B312FB800BE6042 /* StaticJSONMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

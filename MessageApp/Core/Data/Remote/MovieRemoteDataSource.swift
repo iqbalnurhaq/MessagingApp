@@ -14,7 +14,7 @@ protocol MovieRemoteDataSourceProtocol: AnyObject {
 
 final class MovieRemoteDataSource: NSObject {
     
-    private override init() {}
+    override init() {}
     
     static let sharedInstance: MovieRemoteDataSource = MovieRemoteDataSource()
 }

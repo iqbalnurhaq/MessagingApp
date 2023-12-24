@@ -8,8 +8,11 @@
 import Foundation
 
 final class Injection: NSObject {
+    
+    let urlSession = URLSession.shared
+    
     private func provideRepository() -> MovieRepositoryProtocol {
-        let remote: MovieRemoteDataSource = MovieRemoteDataSource.sharedInstance
+        let remote: MovieRemoteDataSource = MovieRemoteDataSource.sharedInstance(urlSession)
         return MovieRepository.sharedInstance(remote)
     }
     

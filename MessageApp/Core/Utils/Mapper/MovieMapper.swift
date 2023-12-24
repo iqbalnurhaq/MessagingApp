@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 final class MovieMapper {
     static func mapMovieResponsesToDomains(input movieResponses: [MovieResponse]) -> [MovieModel] {
@@ -26,6 +27,34 @@ final class MovieMapper {
                 vote_average: result.voteAverage ?? 0,
                 vote_count: result.voteCount ?? 0
             )
+        }
+    }
+    
+    static func mapMovieResponsesToEntities(input movieResponses: [MovieResponse], context: NSManagedObjectContext) -> [MovieEntity] {
+        
+        return movieResponses.map { result in
+            
+//            let entity = NSEntityDescription.entity(forEntityName: "MovieEntity", in: context)
+//            let newMovie = NSManagedObject(entity: entity!, insertInto: context)
+            
+            let newEntity = NSEntityDescription.insertNewObject(forEntityName: "MovieEntity", into: context) as! MovieEntity
+            
+            newEntity.adult = result.adult
+            newEntity.backdropPath = result.backdropPath
+            newEntity.genreIds = result.genreIds as NSObject
+            newEntity.id = Int64(result.id)
+            newEntity.originalTitle = result.originalTitle
+            newEntity.originalLanguage = result.originalLanguage
+            newEntity.overview = result.overview
+            newEntity.popularity = result.popularity ?? 0
+            newEntity.posterPath = result.posterPath
+            newEntity.releaseDate = result.releaseDate
+            newEntity.title = result.title
+            newEntity.video = result.video
+            newEntity.voteAverage = result.voteAverage ?? 0
+            newEntity.voteCount = Int64(result.voteCount ?? 0)
+            
+            return newEntity
         }
     }
 }

@@ -14,25 +14,39 @@ protocol MovieRemoteDataSourceProtocol: AnyObject {
 
 final class MovieRemoteDataSource: NSObject {
     
-    override init() {}
+    typealias MovieRemoteInstance = (URLSession) -> MovieRemoteDataSource
     
-    static let sharedInstance: MovieRemoteDataSource = MovieRemoteDataSource()
+    let urlSession: URLSession
+    
+    init(urlSession: URLSession) {
+        self.urlSession = urlSession
+    }
+    
+    static let sharedInstance: MovieRemoteInstance = { urlSession in
+        return MovieRemoteDataSource(urlSession: urlSession)
+    }
 }
 
 extension MovieRemoteDataSource: MovieRemoteDataSourceProtocol {
     func getNowPlayingMovies(result: @escaping (Result<[MovieResponse], URLError>) -> Void) {
         guard let url = URL(string: Endpoints.Gets.now_playing.url) else { return }
         
-        let task = URLSession.shared.dataTask(with: url) { maybeData, maybeResponse, maybeError in
+        let task = urlSession.dataTask(with: url) { maybeData, maybeResponse, maybeError in
             if maybeError != nil {
                 result(.failure(.addressUnreachable(url)))
-            } else if let data = maybeData, let response = maybeResponse as? HTTPURLResponse, response.statusCode == 200 {
-                let decode = JSONDecoder()
-                do {
-                    let movies = try decode.decode(BaseResponse<[MovieResponse]>.self, from: data).results
-                    result(.success(movies))
-                }catch(let error) {
-                    result(.failure(.invalidResponse))
+            } else if let data = maybeData, let response = maybeResponse as? HTTPURLResponse {
+                if 200 ... 299 ~= response.statusCode {
+                    let decode = JSONDecoder()
+                    do {
+                        let movies = try decode.decode(BaseResponse<[MovieResponse]>.self, from: data).results
+                        result(.success(movies))
+                    }catch(_) {
+                        result(.failure(.invalidResponse))
+                    }
+                } else if response.statusCode == 401 {
+                    result(.failure(.invalidCredential))
+                } else {
+                    result(.failure(.addressUnreachable(url)))
                 }
             }
         }

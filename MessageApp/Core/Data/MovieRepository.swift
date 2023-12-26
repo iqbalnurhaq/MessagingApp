@@ -9,11 +9,11 @@ import Foundation
 
 final class MovieRepository: NSObject {
     
-    typealias MovieInstance = (MovieRemoteDataSource) -> MovieRepository
+    typealias MovieInstance = (MovieRemoteDataSourceProtocol) -> MovieRepository
     
-    fileprivate let remote: MovieRemoteDataSource
+    fileprivate let remote: MovieRemoteDataSourceProtocol
     
-    private init(remote: MovieRemoteDataSource) {
+    private init(remote: MovieRemoteDataSourceProtocol) {
         self.remote = remote
     }
     

@@ -9,7 +9,7 @@ import XCTest
 @testable import MessageApp
 import CoreData
 
-final class MovieLocalDataSource: XCTestCase {
+final class MovieLocalDataSourceTest: XCTestCase {
     
     
    var databaseHelper: DatabaseHelper!

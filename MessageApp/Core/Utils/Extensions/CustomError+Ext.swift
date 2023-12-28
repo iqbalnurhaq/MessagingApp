@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum URLError: LocalizedError, Equatable {
+enum URLError: Error, Hashable, Equatable, LocalizedError  {
     case invalidResponse
     case addressUnreachable(URL)
     case custom(String)

@@ -29,6 +29,10 @@
 		6EB0B81F2B231D6200B598A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0B81E2B231D6200B598A7 /* Model.swift */; };
 		6EB0B8212B23209700B598A7 /* MessageListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0B8202B23209700B598A7 /* MessageListCollectionViewCell.swift */; };
 		6EB0B8232B23211400B598A7 /* CustomMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0B8222B23211400B598A7 /* CustomMessageView.swift */; };
+		6EB2585A2B3AB37F0019E98A /* HomeUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB258592B3AB37F0019E98A /* HomeUseCaseTest.swift */; };
+		6EB2585C2B3BC2D80019E98A /* MockMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2585B2B3BC2D80019E98A /* MockMovieRepository.swift */; };
+		6EB2585F2B3BF7560019E98A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2585E2B3BF7560019E98A /* Movie.swift */; };
+		6EB258632B3C27EE0019E98A /* HomePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB258622B3C27EE0019E98A /* HomePresenterTest.swift */; };
 		6EC527832B24BD2B007CC056 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC527792B24BD2B007CC056 /* APICall.swift */; };
 		6EC527842B24BD2B007CC056 /* CustomError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5277B2B24BD2B007CC056 /* CustomError+Ext.swift */; };
 		6EC527852B24BD2B007CC056 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5277F2B24BD2B007CC056 /* BaseResponse.swift */; };
@@ -86,6 +90,10 @@
 		6EB0B81E2B231D6200B598A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6EB0B8202B23209700B598A7 /* MessageListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EB0B8222B23211400B598A7 /* CustomMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageView.swift; sourceTree = "<group>"; };
+		6EB258592B3AB37F0019E98A /* HomeUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTest.swift; sourceTree = "<group>"; };
+		6EB2585B2B3BC2D80019E98A /* MockMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieRepository.swift; sourceTree = "<group>"; };
+		6EB2585E2B3BF7560019E98A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		6EB258622B3C27EE0019E98A /* HomePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTest.swift; sourceTree = "<group>"; };
 		6EC527792B24BD2B007CC056 /* APICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		6EC5277B2B24BD2B007CC056 /* CustomError+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomError+Ext.swift"; sourceTree = "<group>"; };
 		6EC5277F2B24BD2B007CC056 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -208,6 +216,38 @@
 				6EC5279B2B252875007CC056 /* Home */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		6EB258572B3AB33A0019E98A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6EB258582B3AB33F0019E98A /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6EB258582B3AB33F0019E98A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				6EB258592B3AB37F0019E98A /* HomeUseCaseTest.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		6EB2585D2B3BF7420019E98A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EB2585E2B3BF7560019E98A /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EB258602B3BF7DA0019E98A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6EB258622B3C27EE0019E98A /* HomePresenterTest.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		6EC527752B24BD2B007CC056 /* Core */ = {
@@ -366,6 +406,7 @@
 		6EC920AD2B2D7B9300A7E2C7 /* MessageAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				6EB258602B3BF7DA0019E98A /* Presenter */,
 				6EC920C62B2E075000A7E2C7 /* Resources */,
 				6EC920C32B2E03E700A7E2C7 /* Mocks */,
 				6EC920B52B2D7B9B00A7E2C7 /* Data */,
@@ -377,6 +418,7 @@
 		6EC920B52B2D7B9B00A7E2C7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6EB258572B3AB33A0019E98A /* Domain */,
 				6EDCCC5B2B389710008F50DA /* Repositories */,
 				6EC920B62B2D7BAF00A7E2C7 /* DataSource */,
 			);
@@ -425,6 +467,7 @@
 			children = (
 				6EC920C42B2E043F00A7E2C7 /* MockURLSessionProtocol.swift */,
 				6EDCCC602B39EC64008F50DA /* MockMovieRemoteDataSource.swift */,
+				6EB2585B2B3BC2D80019E98A /* MockMovieRepository.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -432,6 +475,7 @@
 		6EC920C62B2E075000A7E2C7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EB2585D2B3BF7420019E98A /* Model */,
 				6EC920C72B2E075C00A7E2C7 /* JSON */,
 			);
 			path = Resources;
@@ -595,8 +639,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EDCCC612B39EC64008F50DA /* MockMovieRemoteDataSource.swift in Sources */,
+				6EB258632B3C27EE0019E98A /* HomePresenterTest.swift in Sources */,
+				6EB2585C2B3BC2D80019E98A /* MockMovieRepository.swift in Sources */,
 				6EC920AF2B2D7B9300A7E2C7 /* MessageAppTests.swift in Sources */,
 				6EC920B82B2D7BCB00A7E2C7 /* MovieRemoteDataSourceTest.swift in Sources */,
+				6EB2585F2B3BF7560019E98A /* Movie.swift in Sources */,
+				6EB2585A2B3AB37F0019E98A /* HomeUseCaseTest.swift in Sources */,
 				6EDCCC5F2B389791008F50DA /* MovieRepositoryTest.swift in Sources */,
 				6E3901E02B349A6400BE6042 /* CoreDataTestStack.swift in Sources */,
 				6EC920C52B2E043F00A7E2C7 /* MockURLSessionProtocol.swift in Sources */,

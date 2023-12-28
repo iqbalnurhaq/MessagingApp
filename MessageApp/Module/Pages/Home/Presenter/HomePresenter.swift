@@ -22,19 +22,22 @@ final class HomePresenter: HomePresenterProtocol {
     }
     
     func fetchNowPlayingMovies() {
+        self.loadingState = true
         self.eventHandler?(.loading)
         self.homeUseCase.getNowPlayingMovies { result in
             switch result {
             case .success(let movies):
-                DispatchQueue.main.async {
+                DispatchQueue.global(qos: .background).async {
                     self.movies = movies
                     self.numRow = movies.count
+                    self.loadingState = false
                     self.eventHandler?(.stopLoading)
                     self.eventHandler?(.dataLoaded)
                 }
             case .failure(let error):
-                DispatchQueue.main.async {
+                DispatchQueue.global(qos: .background).async {
                     self.errorMessage = error.localizedDescription
+                    self.loadingState = false
                     self.eventHandler?(.stopLoading)
                     self.eventHandler?(.error(error))
                 }
